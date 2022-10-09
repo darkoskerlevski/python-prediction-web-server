@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, request, Response
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -62,11 +63,19 @@ sent_attribute_names = [
     "Telephone",
     "IsForeignWorker"
 ]
+=======
+from flask import Flask, request
+
+app = Flask(__name__)
+
+>>>>>>> origin/main
 
 @app.route("/")
 def home():
     return "Hello, World!"
 
+
+<<<<<<< HEAD
 @app.route('/predict', methods=['GET', 'POST'])
 def result():
     logreg_model = None
@@ -100,6 +109,12 @@ def result():
     response_data_json = json.dumps(response_data)
     
     return Response(response_data_json, mimetype="application/json") # response to your request.
+=======
+@app.route('/web', methods=['GET', 'POST'])
+def result():
+    print(request.form['key','value']) # should display 'bar'
+    return 'Received !' # response to your request.
+>>>>>>> origin/main
 
 
 if __name__ == "__main__":
